@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Voyage</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="emoji"></span>
+                Checklist Voyage
+                <span class="emoji"></span>
+            </h1>
+            <p class="subtitle">Préparez votre voyage en toute sérénité</p>
+        </header>
+
+        <main class="main">
+            <section class="progress-section">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="completedCount">0</span> / <span id="totalCount">0</span> éléments prêts
+                    </div>
+                </div>
+            </section>
+
+            <section class="add-section">
+                <form class="add-form" id="addItemForm">
+                    <input 
+                        type="text" 
+                        class="add-input" 
+                        id="itemInput" 
+                        placeholder="Ajouter un élément (ex: passeport, chargeur...)"
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="add-btn">
+                        <span class="plus-icon">+</span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="filters-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        Tout (<span id="allCount">0</span>)
+                    </button>
+                    <button class="filter-btn" data-filter="active">
+                        À faire (<span id="activeCount">0</span>)
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        Fait (<span id="completedFilterCount">0</span>)
+                    </button>
+                </div>
+                <button class="clear-completed-btn" id="clearCompleted">
+                    Supprimer les terminés
+                </button>
+            </section>
+
+            <section class="checklist-section">
+                <ul class="checklist" id="checklist">
+                    <!-- Les éléments seront ajoutés dynamiquement ici -->
+                </ul>
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📝</div>
+                    <p class="empty-text">Votre checklist est vide</p>
+                    <p class="empty-subtext">Ajoutez votre premier élément pour commencer</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">
+                Sauvegardé automatiquement dans votre navigateur
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
